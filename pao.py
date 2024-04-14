@@ -59,13 +59,16 @@ weekday = None
 if year != '' and month != '' and day != '':
     date = dt.date(year, month, day)
     weekday = date.strftime('%a')
+    
+
+st.write('#### 憧れの人を選んでください')
+person = st.selectbox('憧れの人を選んでください',["Marina Takewaki","xxxxx","xxxxx"])
 
 st.write('#### Paoの活動')
 
 if date is not None:
     weight = st.selectbox("重りを選択してください",["28g","23g","18g"])
-    time = st.number_input('3.運動時間を入力してください(分)', min_value=1, max_value=10, step=1)
-    person = st.selectbox('4.憧れの人を選んでください',["Marina Takewaki","xxxxx","xxxxx"])
+    time = st.number_input('運動時間を入力してください(分)', min_value=1, max_value=10, step=1)
 
     if st.button('データを登録する'):
         _df = {
